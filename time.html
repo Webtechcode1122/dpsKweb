@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather Display</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #E0E0E0;
+            transition: color 0.3s;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        #weather-container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            width: 400px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #BB86FC;
+            transition: color 0.3s;
+        }
+
+        #current-weather {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #03DAC6;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        #weather-icon {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+        }
+
+        #location {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #FFFFFF;
+        }
+
+        .theme-light {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+
+        .theme-light #weather-container {
+            background-color: #F0F0F0;
+            color: #000000;
+        }
+
+        .theme-light h1 {
+            color: #6200EE;
+        }
+
+        .theme-light #current-weather {
+            color: #018786;
+        }
+
+        .theme-blue {
+            background-color: #001F3F;
+            color: #7FDBFF;
+        }
+
+        .theme-blue #weather-container {
+            background-color: #0074D9;
+            color: #7FDBFF;
+        }
+
+        .theme-blue h1 {
+            color: #39CCCC;
+        }
+
+        .theme-blue #current-weather {
+            color: #7FDBFF;
+        }
+
+        .theme-green {
+            background-color: #2ECC40;
+            color: #001F3F;
+        }
+
+        .theme-green #weather-container {
+            background-color: #3D9970;
+            color: #001F3F;
+        }
+
+        .theme-green h1 {
+            color: #2ECC40;
+        }
+
+        .theme-green #current-weather {
+            color: #001F3F;
+        }
+
+        #theme-selector {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 1em;
+            cursor: pointer;
+            appearance: none;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333333;
+            border-radius: 5px;
+            outline: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #theme-selector option {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #FFFFFF;
+        }
+
+        #theme-selector:hover {
+            background-color: rgba(255, 255, 255, 1);
+            color: #000000;
+        }
+
+        #theme-selector:focus {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+    </style>
+    <script>
+        async function fetchWeatherData(location) {
+            const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+            const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}&units=metric`;
+
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                return data;
+            } catch (error) {
+                console.error('Error fetching weather data:', error);
+            }
+        }
+
+        function updateWeatherDisplay(location) {
+            fetchWeatherData(location)
+                .then(data => {
+                    console.log(data);
+                    const weatherDescription = data.weather[0].description;
+                    const temperature = Math.round(data.main.temp);
+                    const iconCode = data.weather[0].icon;
+                    const iconUrl = `http://openweathermap.org/img/wn/${iconCode}.png`;
+
+                    document.getElementById('current-weather').textContent = `${temperature}°C, ${weatherDescription}`;
+                    document.getElementById('weather-icon').src = iconUrl;
+                    document.getElementById('location').textContent = data.name;
+                })
+                .catch(error => console.error('Error updating weather display:', error));
+        }
+
+        function changeTheme() {
+            var theme = document.getElementById("theme-selector").value;
+            document.body.className = theme;
+        }
+
+        window.onload = function() {
+            updateWeatherDisplay('New York'); // Default location, you can change it to any city
+            setInterval(() => {
+                updateWeatherDisplay('New York'); // Update weather every 10 minutes, change city if needed
+            }, 600000); // 600000 milliseconds = 10 minutes
+
+            document.getElementById('theme-selector').addEventListener('change', changeTheme);
+        }
+    </script>
+</head>
+<body>
+    <div id="weather-container">
+        <h1>Current Weather</h1>
+        <img id="weather-icon" src="" alt="Weather Icon">
+        <p id="current-weather"></p>
+        <p id="location"></p>
+    </div>
+    <select id="theme-selector">
+        <option value="">Select Theme</option>
+        <option value="theme-light">Light Theme</option>
+        <option value="theme-blue">Blue Theme</option>
+        <option value="theme-green">Green Theme</option>
+    </select>
+</body>
+</html>
