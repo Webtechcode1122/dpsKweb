@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Meera+Inimai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Meera Inimai', sans-serif;
+    cursor: none;
+}
+body{
+    background-color: black;
+    
+}
+#main{
+    width:100%;
+    height:100vh;
+    background-image:url(nasa-V4ZksNimxLk-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+#box1{
+    position: absolute;
+    top:48%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:55%;
+    height:70%;
+    border:solid rgb(255, 255, 255);
+    border-radius: 20px;
+    border-width:1px;
+    background-color: rgba(0, 0, 0, 0.543);
+    transition:0.5s;
+    color: rgb(255, 255, 255);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden ;
+    padding: 25px;
+    line-height:50px;
+    transition:0.5s;
+}
+#box1:hover{
+box-shadow: 3px 3px 3px rgb(255,255,255,10);
+}
+#h1st{
+    font-family: 'Luxurious Script', cursive;
+    font-size:10vh;
+}
+#box1 p{
+    font-size:3.5vh;
+    padding-top:20px;
+}
+#get{
+    padding:10px;
+    color: white;
+    border:white solid;
+    border-radius:10px;
+    transition:background 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0);
+}
+#get:hover{
+     background-color: white;
+     color: black;
+}
