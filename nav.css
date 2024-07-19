@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Meera+Inimai&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Meera Inimai', sans-serif;
+}
+#nav{
+    position:relative;
+    padding: 3vw 10vw;
+    display:flex;
+    justify-content:space-between;
+   background-color: rgba(128, 128, 128, 0.151);
+}
+#navl{
+    display: flex;
+    gap:30px;
+}
+#nav a{
+    font-weight:800;
+    font-size:14px;
+    color: rgb(255, 255, 255);
+    text-decoration:none;
+}
+
+#nav #center{
+    font-size:14px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
