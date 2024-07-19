@@ -1,0 +1,22 @@
+STAGES OF Artemis MISSION
+
+<Artemis 1>
+
+Artemis I, the inaugural mission of NASA's Artemis program, is a crucial uncrewed test flight designed to validate the capabilities of the Space Launch System (SLS) and the Orion spacecraft. Intended as a pivotal step toward human lunar exploration, Artemis I aims to orbit the Moon to evaluate the performance of these systems in preparation for subsequent crewed missions. This mission sets the stage for Artemis' ambitious goal of returning humans to the lunar surface and advancing our understanding of space exploration capabilities for future deep-space missions.
+
+<Artemis 2>
+
+Artemis II is the second mission in NASA's Artemis program, marking a significant milestone as the first crewed flight of the Orion spacecraft. Building on the data and insights gained from Artemis I, this mission involves a lunar flyby, providing astronauts aboard Orion with a firsthand experience of deep space. Artemis II serves as a crucial step toward the program's ultimate objective of landing the first woman and the next man on the lunar surface and furthering humanity's exploration of the Moon and beyond.During Artemis II, astronauts will test critical life support systems and conduct valuable experiments, contributing to our understanding of extended space travel. 
+
+<Artemis 3>
+
+Artemis III, the centerpiece of NASA's Artemis program, is the mission slated to land astronauts on the lunar surface. This historic endeavor, featuring the first woman and the next man, aims to explore the lunar South Pole and conduct critical experiments, marking a significant step towards establishing a sustainable human presence on the Moon. Artemis III is poised to redefine our understanding of lunar exploration and serve as a stepping stone for future crewed missions to Mars.
+Artemis III represents a groundbreaking chapter in human space exploration, fostering international collaboration and setting the stage for humanity's enduring presence beyond Earth.
+
+<Artemis 4>
+
+The Gateway, a pivotal component of NASA's Artemis program, is a lunar outpost that will orbit the Moon, serving as a staging point for crewed missions to the lunar surface and facilitating sustained exploration. As a collaborative international effort, the Gateway provides a versatile platform for scientific research, technological development, and a gateway for future human missions to Mars.
+The Gateway will act as a vital waypoint for astronauts, enabling scientific investigations, testing new technologies, and supporting the development of skills and systems necessary for future deep-space missions.
+
+<Artemis 5>
+Sustainable lunar exploration involves the establishment of a lunar base, leveraging resources to support long-term human presence on the Moon. This initiative aims to harness local materials for life support, fuel production, and habitat construction, marking a crucial stride toward self-sufficiency and paving the way for extended lunar habitation.
